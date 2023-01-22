@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* make the customizations */
+
+$theme-colors: ( "primary": #6DB0FF) !important;
+body {
+    font-family: "Poppins" !important;
+}
+
+
+/* import bootstrap to set changes */
