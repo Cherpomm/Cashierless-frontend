@@ -19,32 +19,33 @@ $link-hover-color: #6DB0FF;
 }
 
 .nav-item {
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        li {
-            float: left;
-            position: relative;
-            a {
-                display: block;
-                padding: 10px 20px 0 20px;
-                line-height: 50px;
-                color: $nav-font-color;
-                text-decoration: none;
-                &::before {
-                    transition: 300ms;
-                    height: 5px;
-                    content: "";
-                    position: absolute;
-                    background-color: $link-hover-color;
-                    width: 0%;
-                    bottom: 0px;
-                }
-                &:hover::before {
-                    width: 70%;
-                }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .item {
+        float: left;
+        position: relative;
+        a {
+            display: block;
+            // padding: 10px 20px 0 20px;
+            line-height: 50px;
+            color: $nav-font-color;
+            text-decoration: none;
+            &::before {
+                transition: 300ms;
+                height: 5px;
+                content: "";
+                position: absolute;
+                background-color: $link-hover-color;
+                width: 0%;
+                bottom: 0px;
+            }
+            &:hover::before {
+                width: 70%;
             }
         }
+    }
+    a {
+        line-height: 52px;
     }
 }

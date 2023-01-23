@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, LinkProps } from "react-router-dom";
 
 import "./Navbar.scss";
@@ -25,10 +25,6 @@ const HomeNavbarItem: item[] = [
     NavText: "Product",
     NavLink: "/Product",
   },
-  {
-    NavText: "Login",
-    NavLink: "/Login",
-  },
 ];
 
 const HomeNavbar: React.FC = () => (
@@ -41,14 +37,17 @@ const HomeNavbar: React.FC = () => (
       <Navbar.Collapse id="toggle-home-navbar">
         <Nav className="ms-auto nav-item">
           {HomeNavbarItem.map((item) => (
-            <ul>
-              <li>
-                <Link to={item.NavLink} className="">
-                  {item.NavText}
-                </Link>
-              </li>
+            <ul key={item.NavText} className="item">
+              <Link to={item.NavLink}>{item.NavText}</Link>
             </ul>
           ))}
+          <ul className="Buttonna">
+            <Link to={"/Login"}>
+              <Button variant="primary" className="">
+                Login
+              </Button>
+            </Link>
+          </ul>
         </Nav>
       </Navbar.Collapse>
     </Container>
