@@ -10,12 +10,15 @@ const Login: React.FC = () => (
     <Container>
       <Row>
         <Col>
-          <Image src={ShoppingMan} alt="" fluid height={"100%"}/>
+          <Image src={ShoppingMan} alt="" fluid height={"100%"} />
         </Col>
         <Col>
-          <BsFillBasket2Fill size={30} className="basket-icon mb-3"/>
-          <h4 className="font-weight-bold">Hello there!</h4>
-          <p>Welcome to Hardware Shop <br/> Please login to enable to use the shop</p>
+          <BsFillBasket2Fill size={30} className="basket-icon mb-3" />
+          <h4>Hello there!</h4>
+          <p>
+            Welcome to Hardware Shop <br /> Please login to enable to use the
+            shop
+          </p>
           <Form></Form>
         </Col>
       </Row>

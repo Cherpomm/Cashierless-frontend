@@ -21,11 +21,13 @@ const Home: React.FC = () => {
               <br />
               Register is the option.
             </h5>
-            <Button variant="primary">Register</Button>
+            <Button variant="primary" className="text-white">
+              Register
+            </Button>
           </Col>
         </Row>
       </Container>
-      <Image src={HomePic} alt="Cashierless"/>
+      <Image src={HomePic} alt="Cashierless" />
       <HomeFooter />
     </div>
   );

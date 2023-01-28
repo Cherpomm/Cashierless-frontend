@@ -41,9 +41,9 @@ const HomeNavbar: React.FC = () => (
               <Link to={item.NavLink}>{item.NavText}</Link>
             </ul>
           ))}
-          <ul className="Buttonna">
+          <ul>
             <Link to={"/Login"}>
-              <Button variant="primary" className="">
+              <Button variant="primary" className="text-white">
                 Login
               </Button>
             </Link>
