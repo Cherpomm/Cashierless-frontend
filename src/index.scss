@@ -23,6 +23,7 @@ $theme-colors: ( "primary": $primary,
 );
 body {
     font-family: "Poppins" !important;
+    min-height: 100vh;
 }
 
 
