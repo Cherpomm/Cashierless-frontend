@@ -7,6 +7,7 @@ import HomeFooter from "./components/Footer";
 import HomeNavbar from "./components/Navbar";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
@@ -21,6 +22,7 @@ const App: React.FC = () => {
       <Route path="/ContactUs" element={<ContactUs />}></Route>
       <Route path="/Login" element={<Login />}></Route>
       <Route path="/Register" element={<Register />}></Route>
+      <Route path="/Dashboard" element={<Dashboard />}></Route>
     </Routes>
   );
 };
