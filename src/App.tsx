@@ -10,6 +10,7 @@ import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
+import Register from "./pages/Register";
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
       <Route path="/Product" element={<Product />} />
       <Route path="/ContactUs" element={<ContactUs />}></Route>
       <Route path="/Login" element={<Login />}></Route>
+      <Route path="/Register" element={<Register />}></Route>
     </Routes>
   );
 };

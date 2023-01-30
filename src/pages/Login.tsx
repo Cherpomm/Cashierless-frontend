@@ -1,6 +1,6 @@
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import HomeNavbar from "../components/Navbar";
-import ShoppingMan from "../assets/shopping_women.png";
+import ShoppingWomen from "../assets/shopping_women.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./Login.scss";
 import { Link } from "react-router-dom";
@@ -13,17 +13,17 @@ const Login: React.FC = () => {
       <Container className="p-4 align-items-center">
         <Row className="justify-content-center align-items-center">
           <Col lg={5} className="d-none d-lg-block">
-            <Image src={ShoppingMan} alt="" fluid/>
+            <Image src={ShoppingWomen} alt="" fluid/>
           </Col>
           <Col lg={5}>
-            <Card className="px-5 py-3 rounded-5">
+            <Card className="py-5 rounded-5 align-items-center">
+              <BsFillBasket2Fill size={30} className="basket-icon" />
               <Card.Body>
-                <BsFillBasket2Fill size={30} className="basket-icon mb-3" />
-                <h4>Hello there!</h4>
-                <small>
+                <h4 className="text-center">Hello there!</h4>
+                <p className="text-center">
                   Welcome to Hardware Shop <br /> Please login to enable to use the
                   shop
-                </small>
+                </p>
                 <Form className="mt-4">
                   <Form.Group className="mb-3" controlId="formEmail">
                     <Form.Control type="email" placeholder="Enter email" />
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
                   <Form.Group className="mb-3" controlId="formCheckbox">
                     <Form.Check type="checkbox" label="Remember Me" />
                   </Form.Group>
-                  <Button variant="primary" type="submit" className="text-white">
+                  <Button variant="primary" type="submit" className="text-white w-100">
                     Login
                   </Button>
                 </Form>
