@@ -3,6 +3,7 @@ import HomeNavbar from "../components/Navbar";
 import ShoppingMan from "../assets/shopping_women.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./Login.scss";
+import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
 
@@ -19,11 +20,11 @@ const Login: React.FC = () => {
               <Card.Body>
                 <BsFillBasket2Fill size={30} className="basket-icon mb-3" />
                 <h4>Hello there!</h4>
-                <p>
+                <small>
                   Welcome to Hardware Shop <br /> Please login to enable to use the
                   shop
-                </p>
-                <Form>
+                </small>
+                <Form className="mt-4">
                   <Form.Group className="mb-3" controlId="formEmail">
                     <Form.Control type="email" placeholder="Enter email" />
                   </Form.Group>
@@ -33,10 +34,15 @@ const Login: React.FC = () => {
                   <Form.Group className="mb-3" controlId="formCheckbox">
                     <Form.Check type="checkbox" label="Remember Me" />
                   </Form.Group>
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit" className="text-white">
                     Login
                   </Button>
                 </Form>
+                <Row>
+                  <small className="mt-5 text-center">Don't have an account yet?
+                    <Link to={"/Register"} className="ms-2 text-decoration-none">Sign Up</Link>
+                  </small>
+                </Row>
               </Card.Body>
             </Card>
           </Col>
