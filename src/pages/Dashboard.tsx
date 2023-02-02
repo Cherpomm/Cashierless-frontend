@@ -8,45 +8,42 @@ import {
   Row,
 } from "react-bootstrap";
 import HomeNavbar from "../components/Navbar";
-import "./Login.scss";
+import "./Dashboard.scss";
 
 const Dashboard: React.FC = () => {
   return (
     <div className="">
       <HomeNavbar />
       <Container>
-        <Row>
-          <Col lg={7} className="p-4">
-            <h2>Good to see you!</h2>
-            <p className="mb-0">Click the button to see</p>
-            <p className="mt-0">What we have for you today</p>
-            <Button variant="primary" className="text-white">
-              Product
-            </Button>
+        <Row className="d-flex flex-row justify-content-center">
+          <Col lg={6} className="p-4">
+            <div className="mb-4">
+              <h2>Good to see you!</h2>
+              <p className="mb-0">Click the button to see</p>
+              <p className="mt-0">What we have for you today</p>
+              <Button variant="primary" className="text-white">
+                Product
+              </Button>
+            </div>
+            
             <Card>
               <Card.Body>
                 <Row>
-                  <Col xs={8}>
+                  <Col xs={8} className="d-flex flex-column justify-content-between py-2">
                     <h3>Balance</h3>
-                    <h1>{2200.0}</h1>
+                    <h1>$ 2200.00</h1>
                     <small>Your account number is 123-456-789</small>
                   </Col>
                   <Col xs={4}>
-                    <ul>
-                      <Button variant="primary" className="text-white w-100">
-                        Scan
-                      </Button>
-                    </ul>
-                    <ul>
-                      <Button variant="primary" className="text-white w-100">
-                        Top Up
-                      </Button>
-                    </ul>
-                    <ul>
-                      <Button variant="primary" className="text-white w-100">
-                        Transaction
-                      </Button>
-                    </ul>
+                    <Button variant="primary" className="text-white w-100 card-button">
+                      Scan
+                    </Button>
+                    <Button variant="primary" className="text-white w-100 card-button">
+                      Top Up
+                    </Button>
+                    <Button variant="primary" className="text-white w-100 card-button">
+                      Transaction
+                    </Button>
                   </Col>
                 </Row>
               </Card.Body>
