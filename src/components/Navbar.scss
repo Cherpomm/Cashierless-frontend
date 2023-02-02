@@ -19,12 +19,15 @@ $link-hover-color: #6DB0FF;
 }
 
 .nav-item {
-    list-style: none;
+    // height: 55px;
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    // padding-top: 15px;
     .item {
         float: left;
         position: relative;
+        margin-bottom: 0px;
         a {
             display: block;
             // padding: 10px 20px 0 20px;
