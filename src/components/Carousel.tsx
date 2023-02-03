@@ -11,7 +11,7 @@ interface CarouselProps {
   items: CarouselInfo[];
 }
 
-const CarouselWithChildren:React.FC<CarouselProps> = ({items}) => {
+const CarouselWithItems:React.FC<CarouselProps> = ({items}) => {
   return (
     <Carousel className="rounded mt-4">
       {items.map((item) => (
@@ -31,4 +31,4 @@ const CarouselWithChildren:React.FC<CarouselProps> = ({items}) => {
   );
 }
 
-export default CarouselWithChildren;
+export default CarouselWithItems;

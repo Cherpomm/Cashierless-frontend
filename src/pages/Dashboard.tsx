@@ -7,9 +7,10 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
-import CarouselWithChildren from "../components/Carousel";
+import CarouselWithItems from "../components/Carousel";
 import HomeNavbar from "../components/Navbar";
 import "./Dashboard.scss";
+import {BsUpcScan, BsFillCreditCardFill, BsClockHistory} from "react-icons/bs";
 
 const Dashboard: React.FC = () => {
   return (
@@ -37,19 +38,19 @@ const Dashboard: React.FC = () => {
                   </Col>
                   <Col xs={4}>
                     <Button variant="primary" className="text-white w-100 card-button">
-                      Scan
+                      <BsUpcScan className="me-1"/>Scan
                     </Button>
                     <Button variant="primary" className="text-white w-100 card-button">
-                      Top Up
+                      <BsFillCreditCardFill className="me-1"/>Top Up
                     </Button>
                     <Button variant="primary" className="text-white w-100 card-button">
-                      Transaction
+                      <BsClockHistory  className="me-1"/>Transaction
                     </Button>
                   </Col>
                 </Row>
               </Card.Body>
             </Card>
-            <CarouselWithChildren items={[
+            <CarouselWithItems items={[
               {
                 imgSrc:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg", 
                 imgAlt:"nope", 
@@ -58,7 +59,7 @@ const Dashboard: React.FC = () => {
               }
             ]}/>
           </Col>
-          <Col lg={5}>
+          <Col lg={4}>
             <Card>
               <Card.Body>
                 <h4 className="text-center">My Profile</h4>
