@@ -7,6 +7,7 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
+import CarouselWithChildren from "../components/Carousel";
 import HomeNavbar from "../components/Navbar";
 import "./Dashboard.scss";
 
@@ -18,10 +19,10 @@ const Dashboard: React.FC = () => {
         <Row className="d-flex flex-row justify-content-center">
           <Col lg={6} className="p-4">
             <div className="mb-4">
-              <h2>Good to see you!</h2>
+              <h1 className="fw-bold">Good to see you!</h1>
               <p className="mb-0">Click the button to see</p>
               <p className="mt-0">What we have for you today</p>
-              <Button variant="primary" className="text-white">
+              <Button variant="primary" className="text-white w-25">
                 Product
               </Button>
             </div>
@@ -48,6 +49,14 @@ const Dashboard: React.FC = () => {
                 </Row>
               </Card.Body>
             </Card>
+            <CarouselWithChildren items={[
+              {
+                imgSrc:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg", 
+                imgAlt:"nope", 
+                label:"Hellomotherfuckers", 
+                description:"a;dsflkja;dflkja;dfklja;kldjf"
+              }
+            ]}/>
           </Col>
           <Col lg={5}>
             <Card>
