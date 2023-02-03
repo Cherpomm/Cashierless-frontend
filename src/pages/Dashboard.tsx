@@ -1,16 +1,24 @@
 import {
   Button,
   Card,
+  CardGroup,
   Col,
   Container,
+  Figure,
   Form,
   Image,
+  ListGroup,
   Row,
 } from "react-bootstrap";
 import CarouselWithItems from "../components/Carousel";
 import HomeNavbar from "../components/Navbar";
 import "./Dashboard.scss";
-import {BsUpcScan, BsFillCreditCardFill, BsClockHistory} from "react-icons/bs";
+import {BsUpcScan, BsFillCreditCardFill, BsClockHistory, BsPencilFill} from "react-icons/bs";
+
+interface transaction{
+  store: string;
+  
+}
 
 const Dashboard: React.FC = () => {
   return (
@@ -62,10 +70,23 @@ const Dashboard: React.FC = () => {
           <Col lg={4}>
             <Card>
               <Card.Body>
-                <h4 className="text-center">My Profile</h4>
-                <div className="border">This is the motherfucking pic</div>
-                <h5 className="text-center">Supakit Lokaew</h5>
-                <p className="text-center">Customer</p>
+                <CardGroup className="d-flex flex-column align-items-center mb-3 px-3">
+                  <h4 className="mt-3 fw-bold">My Profile</h4>
+                  <Image className="profile-img border rounded-5 my-3" fluid rounded src="https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg" />
+                  <h5 className="fw-bold mb-0">Supakit Lokaew</h5>
+                  <p>Customer</p>
+                  <div className="d-flex flex-row">
+                    <Button variant="primary text-white me-2"><BsPencilFill/></Button>
+                    <Button variant="primary text-white">View Full Profile</Button>
+                  </div>
+                  <div className="my-4 bg-primary border-bottom border-gray pb-1 mb-0 w-100" />
+                </CardGroup>
+                <CardGroup className="ps-3">
+                  <h5 className="fw-bold">Your last transaction</h5>
+                  <div>
+                    <h5>{}</h5>
+                  </div>
+                </CardGroup>
               </Card.Body>
             </Card>
           </Col>
