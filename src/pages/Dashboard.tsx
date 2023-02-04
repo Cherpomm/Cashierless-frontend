@@ -87,13 +87,15 @@ const Dashboard: React.FC = () => {
                       <BsFillCreditCardFill className="me-1" />
                       <span>Top Up</span>
                     </Button>
-                    <Button
-                      variant="primary"
-                      className="text-white w-100 card-button"
-                    >
-                      <BsClockHistory className="me-1" />
-                      <span>Transaction</span>
-                    </Button>
+                    <Link to={"/Transaction"}>
+                      <Button
+                        variant="primary"
+                        className="text-white w-100 card-button"
+                      >
+                        <BsClockHistory className="me-1" />
+                        <span>Transaction</span>
+                      </Button>
+                    </Link>
                   </Col>
                 </Row>
               </Card.Body>
