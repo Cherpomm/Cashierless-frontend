@@ -23,6 +23,7 @@ const App: React.FC = () => {
       <Route path="/Login" element={<Login />}></Route>
       <Route path="/Register" element={<Register />}></Route>
       <Route path="/Dashboard" element={<Dashboard />}></Route>
+      <Route path="/Transaction" element={<Dashboard />}></Route>
     </Routes>
   );
 };
