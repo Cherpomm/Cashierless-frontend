@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Product from "./pages/Product";
+import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Transaction from "./pages/Transaction";
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
       <Route path="/Register" element={<Register />}></Route>
       <Route path="/Dashboard" element={<Dashboard />}></Route>
       <Route path="/Transaction" element={<Transaction />}></Route>
+      <Route path="/Profile" element={<Profile />}></Route>
     </Routes>
   );
 };

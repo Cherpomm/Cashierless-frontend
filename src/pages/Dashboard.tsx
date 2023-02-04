@@ -129,9 +129,11 @@ const Dashboard: React.FC = () => {
                     <Button variant="primary text-white me-2">
                       <BsPencilFill />
                     </Button>
-                    <Button variant="primary text-white">
-                      View Full Profile
-                    </Button>
+                    <Link to={"/Profile"}>
+                      <Button variant="primary text-white">
+                        View Full Profile
+                      </Button>
+                    </Link>
                   </div>
                   <div className="my-4 bg-primary border-bottom border-gray pb-1 mb-0 w-100" />
                 </CardGroup>
