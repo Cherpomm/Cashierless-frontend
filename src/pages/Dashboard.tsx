@@ -143,7 +143,7 @@ const Dashboard: React.FC = () => {
                       </div>
                       <div className="d-flex justify-content-between mt-0">
                         <Link to={item.viewDetailLink}>View Detail</Link>
-                        <p>{item.price}</p>
+                        <p>{item.price + " B"}</p>
                       </div>
                     </div>
                   ))}
