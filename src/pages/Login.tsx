@@ -17,7 +17,7 @@ const Login: React.FC = () => {
   return (
     <div className="login">
       <HomeNavbar />
-      <Container className="p-4 align-items-center">
+      <Container className="p-4">
         <Row className="justify-content-center align-items-center">
           <Col lg={5} className="d-none d-lg-block">
             <Image src={ShoppingWomen} alt="" fluid />
