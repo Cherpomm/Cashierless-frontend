@@ -5,6 +5,7 @@ import {
   Col,
   Container,
   Image,
+  Modal,
   Row,
 } from "react-bootstrap";
 import CarouselWithItems from "../components/Carousel";
@@ -17,6 +18,8 @@ import {
   BsPencilFill,
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { QRCodeReader } from "@zxing/library";
 
 interface transaction {
   store: string;
@@ -47,6 +50,16 @@ const mockTransaction: transaction[] = [
 ];
 
 const Dashboard: React.FC = () => {
+  const [showScan, setShowScan] = useState(false);
+  const handleCloseScan = () => setShowScan(false);
+  const handleShowScan = () => setShowScan(true);
+
+  const codeReader = new QRCodeReader();
+
+  // useEffect(()=>{
+  //   codeReader.decode
+  // },[])
+
   return (
     <div>
       <HomeNavbar />
@@ -76,6 +89,7 @@ const Dashboard: React.FC = () => {
                     <Button
                       variant="primary"
                       className="text-white w-100 card-button"
+                      onClick={handleShowScan}
                     >
                       <BsUpcScan className="me-1" />
                       <span>Scan</span>
@@ -160,6 +174,20 @@ const Dashboard: React.FC = () => {
           </Col>
         </Row>
       </Container>
+      <Modal show={showScan} onHide={handleCloseScan}>
+        <Modal.Header closeButton>
+          <Modal.Title>Scan</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseScan}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleCloseScan}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
