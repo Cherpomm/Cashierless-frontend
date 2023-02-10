@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import CarouselWithItems from "../components/Carousel";
 import HomeNavbar from "../components/Navbar";
+import Scanner from "../components/Scanner";
 import "./Dashboard.scss";
 import {
   BsUpcScan,
@@ -19,7 +20,6 @@ import {
 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import { QRCodeReader } from "@zxing/library";
 
 interface transaction {
   store: string;
@@ -54,11 +54,15 @@ const Dashboard: React.FC = () => {
   const handleCloseScan = () => setShowScan(false);
   const handleShowScan = () => setShowScan(true);
 
-  const codeReader = new QRCodeReader();
-
-  // useEffect(()=>{
-  //   codeReader.decode
-  // },[])
+  const handleScan = (data:string) => {
+    if (data) {
+      console.log(data);
+    }
+  };
+  
+  const handleError = (err:string) => {
+    console.error(err);
+  };
 
   return (
     <div>
@@ -178,7 +182,9 @@ const Dashboard: React.FC = () => {
         <Modal.Header closeButton>
           <Modal.Title>Scan</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <Scanner />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseScan}>
             Close
