@@ -1,6 +1,7 @@
-import {Carousel, Image} from 'react-bootstrap';
+import { Carousel, Image } from "react-bootstrap";
 
 interface CarouselInfo {
+  id: number;
   imgSrc: string;
   imgAlt?: string;
   label: string;
@@ -11,11 +12,11 @@ interface CarouselProps {
   items: CarouselInfo[];
 }
 
-const CarouselWithItems:React.FC<CarouselProps> = ({items}) => {
+const CarouselWithItems: React.FC<CarouselProps> = ({ items }) => {
   return (
     <Carousel className="rounded mt-4">
       {items.map((item) => (
-        <Carousel.Item>
+        <Carousel.Item key={item.id}>
           <Image
             className="d-block w-100 rounded"
             src={item.imgSrc}
@@ -29,6 +30,6 @@ const CarouselWithItems:React.FC<CarouselProps> = ({items}) => {
       ))}
     </Carousel>
   );
-}
+};
 
 export default CarouselWithItems;

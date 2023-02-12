@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 interface transaction {
+  id: number;
   store: string;
   date: Date;
   viewDetailLink: string;
@@ -30,18 +31,21 @@ interface transaction {
 
 const mockTransaction: transaction[] = [
   {
+    id: 1,
     store: "Hardware store",
     date: new Date(),
     viewDetailLink: "/transaction/1",
     price: 120,
   },
   {
+    id: 2,
     store: "Hardware store",
     date: new Date(),
     viewDetailLink: "/transaction/2",
     price: 120,
   },
   {
+    id: 3,
     store: "Hardware store",
     date: new Date(),
     viewDetailLink: "/transaction/3",
@@ -53,16 +57,6 @@ const Dashboard: React.FC = () => {
   const [showScan, setShowScan] = useState(false);
   const handleCloseScan = () => setShowScan(false);
   const handleShowScan = () => setShowScan(true);
-
-  const handleScan = (data: string) => {
-    if (data) {
-      console.log(data);
-    }
-  };
-
-  const handleError = (err: string) => {
-    console.error(err);
-  };
 
   return (
     <div>
@@ -121,6 +115,7 @@ const Dashboard: React.FC = () => {
             <CarouselWithItems
               items={[
                 {
+                  id: 1,
                   imgSrc:
                     "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg",
                   imgAlt: "nope",
@@ -158,7 +153,7 @@ const Dashboard: React.FC = () => {
                 <CardGroup className="px-3">
                   <h5 className="fw-bold mb-3">Your last transaction</h5>
                   {mockTransaction.map((item) => (
-                    <div className="w-100">
+                    <div className="w-100" key={item.id}>
                       <div className="d-flex justify-content-between">
                         <p className="mb-1">{item.store}</p>
                         <p className="mb-1">{item.date.toLocaleString()}</p>
