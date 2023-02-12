@@ -54,13 +54,13 @@ const Dashboard: React.FC = () => {
   const handleCloseScan = () => setShowScan(false);
   const handleShowScan = () => setShowScan(true);
 
-  const handleScan = (data:string) => {
+  const handleScan = (data: string) => {
     if (data) {
       console.log(data);
     }
   };
-  
-  const handleError = (err:string) => {
+
+  const handleError = (err: string) => {
     console.error(err);
   };
 
@@ -189,7 +189,7 @@ const Dashboard: React.FC = () => {
           <Button variant="secondary" onClick={handleCloseScan}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleCloseScan}>
+          <Button variant="primary text-white" onClick={handleCloseScan}>
             Save Changes
           </Button>
         </Modal.Footer>

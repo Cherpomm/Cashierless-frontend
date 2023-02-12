@@ -1,32 +1,37 @@
-import { useState } from "react";
-import QrReader from "react-qr-reader";
+import QrScanner from "qr-scanner";
+import React, { useEffect, useRef, useState } from "react";
 
-const Scanner:React.FC = () => {
-  const [result, setResult] = useState("no result");
-  const [error, setError] = useState(null);
+interface ScannerProps {}
 
-  if (error) {
-    return <div className="error">{error}</div>;
-  }
+const Scanner: React.FC<ScannerProps> = () => {
+  const video = useRef<HTMLVideoElement>(null);
+  const [qrScanner, setQrScanner] = useState<QrScanner>();
 
-  return (
-    <div>
-      <QrReader
-        delay={300}
-        onError={(error) => {
-          setError(error.message);
-        }}
-        onScan={(data) => {
-          if (data) {
-            setResult(data);
-            setError(null);
-          }
-        }}
-        style={{ width: "100%" }}
-      />
-      <p>{result}</p>
-    </div>
-  );
+  const handleScan = (result: QrScanner.ScanResult) => {
+    console.log("The result is " + result.data);
+  };
+
+  const close = async () => {
+    qrScanner?.stop();
+    qrScanner?.destroy();
+    setQrScanner(undefined);
+  };
+
+  useEffect(() => {
+    if (video.current) {
+      const qrScanner = new QrScanner(
+        video.current,
+        (result) => handleScan(result),
+        {
+          highlightScanRegion: true,
+        }
+      );
+      qrScanner.start();
+      setQrScanner(qrScanner);
+    }
+  }, [video.current]);
+
+  return <video ref={video} className="w-100 rounded"></video>;
 };
 
 export default Scanner;
