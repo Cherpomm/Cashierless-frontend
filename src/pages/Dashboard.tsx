@@ -9,7 +9,7 @@ import {
   Row,
 } from "react-bootstrap";
 import CarouselWithItems from "../components/Carousel";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 import Scanner from "../components/Scanner";
 import "./Dashboard.scss";
 import {
@@ -60,7 +60,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div>
-      <HomeNavbar />
+      <Navbar.DashbaordNavbar />
       <Container>
         <Row className="d-flex flex-row justify-content-center align-items-stretch">
           <Col lg={6} className="p-4">

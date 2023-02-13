@@ -7,7 +7,7 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 import ShoppingMan from "../assets/shopping_man.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./Register.scss";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Register: React.FC = () => {
   return (
     <div className="register">
-      <HomeNavbar />
+      <Navbar.HomeNavbar />
       <Container className="p-4">
         <Row className="justify-content-center align-items-center">
           <Col lg={5} className="d-none d-lg-block">

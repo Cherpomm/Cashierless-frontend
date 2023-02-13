@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container, Pagination, Row, Table } from "react-bootstrap";
 import { BsFillTrashFill } from "react-icons/bs";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 
 interface TransactionProps {
   id: number;
@@ -146,7 +146,7 @@ const Transaction: React.FC = () => {
 
   return (
     <div>
-      <HomeNavbar />
+      <Navbar.DashbaordNavbar />
       <Container className="my-3">
         <div className="d-flex flex-row">
           <h2 className="fw-bold">Transaction History</h2>

@@ -7,7 +7,7 @@ import {
   Image,
   Row,
 } from "react-bootstrap";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 import ShoppingWomen from "../assets/shopping_women.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./Login.scss";
@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const Login: React.FC = () => {
   return (
     <div className="login">
-      <HomeNavbar />
+      <Navbar.HomeNavbar />
       <Container className="p-4">
         <Row className="justify-content-center align-items-center">
           <Col lg={5} className="d-none d-lg-block">

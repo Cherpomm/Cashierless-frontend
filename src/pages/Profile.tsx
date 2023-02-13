@@ -7,7 +7,7 @@ import {
   Image,
   Card,
 } from "react-bootstrap";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 import "./profile.scss";
 
 interface ProfileProp {
@@ -28,7 +28,7 @@ const mockProfile: ProfileProp = {
 const Profile: React.FC = () => {
   return (
     <div className="profile">
-      <HomeNavbar />
+      <Navbar.DashbaordNavbar />
       <Container className="mt-4">
         <Card className="rounded-5">
           <Row className="d-flex flex-row justify-content-center">

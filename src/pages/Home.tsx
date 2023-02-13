@@ -1,13 +1,13 @@
 import { Button, Col, Container, Row, Image } from "react-bootstrap";
 import HomePic from "../assets/homepic1.jpg";
 import HomeFooter from "../components/Footer";
-import HomeNavbar from "../components/Navbar";
+import * as Navbar from "../components/Navbar";
 import "./Home.scss";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <HomeNavbar />
+      <Navbar.HomeNavbar />
       <Container>
         <Row className="py-3 px-4">
           <Col md>

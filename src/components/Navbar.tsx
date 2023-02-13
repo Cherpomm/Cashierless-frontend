@@ -27,7 +27,7 @@ const HomeNavbarItem: item[] = [
   },
 ];
 
-const HomeNavbar: React.FC = () => (
+export const HomeNavbar: React.FC = () => (
   <Navbar bg="white" expand="lg">
     <Container>
       <Navbar.Brand className="brand">
@@ -54,4 +54,37 @@ const HomeNavbar: React.FC = () => (
   </Navbar>
 );
 
-export default HomeNavbar;
+const DashboardNavbarItem: item[] = [
+  
+  {NavText: "Home", NavLink: "/Dashboard"},
+  {NavText: "fuck", NavLink: "/Dashboard"},
+  {NavText: "Me", NavLink: "/Dashboard"},
+  {NavText: "Holy", NavLink: "/Dashboard"},
+]
+
+export const DashbaordNavbar: React.FC = () => (
+  <Navbar bg="white" expand="lg">
+    <Container>
+      <Navbar.Brand className="brand">
+        <Link to={"/Dashboard"}>🛒 Cashierless Store</Link>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="toggle-home-navbar" />
+      <Navbar.Collapse id="toggle-home-navbar">
+        <Nav className="ms-auto nav-item">
+          {DashboardNavbarItem.map((item) => (
+            <ul key={item.NavText} className="item">
+              <Link to={item.NavLink}>{item.NavText}</Link>
+            </ul>
+          ))}
+          <ul className="mb-0">
+            <Link to={"/User"}>
+              <Button variant="primary" className="text-white">
+                User
+              </Button>
+            </Link>
+          </ul>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
+);
