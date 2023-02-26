@@ -71,7 +71,6 @@ const AdminRegister: React.FC = () => {
                     >
                       Register
                     </Link>
-                    Register
                   </Button>
                 </Form>
               </Card.Body>

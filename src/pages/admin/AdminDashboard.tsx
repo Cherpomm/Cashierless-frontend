@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import CarouselWithItems from "../../components/Carousel";
 import * as Navbar from "../../components/Navbar";
-import Scanner from "../../components/Scanner";
 import "./AdminDashboard.scss";
 import {
   BsUpcScan,
@@ -23,41 +22,48 @@ import { useEffect, useRef, useState } from "react";
 
 interface transaction {
   id: number;
-  store: string;
+  client: string;
   date: Date;
   viewDetailLink: string;
   price: number;
+}
+interface profile {
+  id: number;
+  name: string;
+  role: "Customer" | "Store";
 }
 
 const mockTransaction: transaction[] = [
   {
     id: 1,
-    store: "Hardware store",
+    client: "Cherpomm",
     date: new Date(),
     viewDetailLink: "/transaction/1",
     price: 120,
   },
   {
     id: 2,
-    store: "Hardware store",
+    client: "Cherpomm",
     date: new Date(),
     viewDetailLink: "/transaction/2",
     price: 120,
   },
   {
     id: 3,
-    store: "Hardware store",
+    client: "Cherpomm",
     date: new Date(),
     viewDetailLink: "/transaction/3",
     price: 120,
   },
 ];
 
-const Dashboard: React.FC = () => {
-  const [showScan, setShowScan] = useState(false);
-  const handleCloseScan = () => setShowScan(false);
-  const handleShowScan = () => setShowScan(true);
+const mockProfile: profile = {
+  id: 123456789,
+  name: "Hardware Store",
+  role: "Store",
+};
 
+const Dashboard: React.FC = () => {
   return (
     <div>
       <Navbar.DashbaordNavbar />
@@ -66,10 +72,10 @@ const Dashboard: React.FC = () => {
           <Col lg={6} className="p-4">
             <div className="mb-4">
               <h1 className="fw-bold">Good to see you!</h1>
-              <p className="mb-0">Click the button to see</p>
-              <p className="mt-0">What we have for you today</p>
+              <p className="mb-0">Click the button to check all</p>
+              <p className="mt-0">your sales history</p>
               <Button variant="primary" className="text-white w-25">
-                Product
+                Sales History
               </Button>
             </div>
             <Card>
@@ -79,25 +85,20 @@ const Dashboard: React.FC = () => {
                     xs={8}
                     className="d-flex flex-column justify-content-between py-2"
                   >
-                    <h3>Balance</h3>
+                    <h3>Overall Sales</h3>
                     <h1>$ 2200.00</h1>
-                    <small>Your account number is 123-456-789</small>
+                    <small>Your account number is {mockProfile.id}</small>
                   </Col>
-                  <Col xs={4}>
-                    <Button
-                      variant="primary"
-                      className="text-white w-100 card-button"
-                      onClick={handleShowScan}
-                    >
-                      <BsUpcScan className="me-1" />
-                      <span>Scan</span>
-                    </Button>
+                  <Col
+                    xs={4}
+                    className="d-flex flex-column justify-content-center"
+                  >
                     <Button
                       variant="primary"
                       className="text-white w-100 card-button"
                     >
                       <BsFillCreditCardFill className="me-1" />
-                      <span>Top Up</span>
+                      <span>Adjust Product</span>
                     </Button>
                     <Link to={"/Transaction"}>
                       <Button
@@ -105,7 +106,7 @@ const Dashboard: React.FC = () => {
                         className="text-white w-100 card-button"
                       >
                         <BsClockHistory className="me-1" />
-                        <span>Transaction</span>
+                        <span>View All Client</span>
                       </Button>
                     </Link>
                   </Col>
@@ -136,8 +137,8 @@ const Dashboard: React.FC = () => {
                     rounded
                     src="https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg"
                   />
-                  <h5 className="fw-bold mb-0">Supakit Lokaew</h5>
-                  <p>Customer</p>
+                  <h5 className="fw-bold mb-0">{mockProfile.name}</h5>
+                  <p>{mockProfile.role}</p>
                   <div className="d-flex flex-row">
                     <Button variant="primary text-white me-2">
                       <BsPencilFill />
@@ -151,11 +152,11 @@ const Dashboard: React.FC = () => {
                   <div className="my-4 bg-primary border-bottom border-gray pb-1 mb-0 w-100" />
                 </CardGroup>
                 <CardGroup className="px-3">
-                  <h5 className="fw-bold mb-3">Your last transaction</h5>
+                  <h5 className="fw-bold mb-3">Your last sales</h5>
                   {mockTransaction.map((item) => (
                     <div className="w-100" key={item.id}>
                       <div className="d-flex justify-content-between">
-                        <p className="mb-1">{item.store}</p>
+                        <p className="mb-1">{item.client}</p>
                         <p className="mb-1">{item.date.toLocaleString()}</p>
                       </div>
                       <div className="d-flex justify-content-between mt-0">
@@ -164,31 +165,12 @@ const Dashboard: React.FC = () => {
                       </div>
                     </div>
                   ))}
-                  <div>
-                    <h5>{}</h5>
-                  </div>
                 </CardGroup>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-      <Modal show={showScan} onHide={handleCloseScan}>
-        <Modal.Header closeButton>
-          <Modal.Title>Scan</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Scanner />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseScan}>
-            Close
-          </Button>
-          <Button variant="primary text-white" onClick={handleCloseScan}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
     </div>
   );
 };
