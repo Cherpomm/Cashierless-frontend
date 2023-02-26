@@ -12,6 +12,7 @@ import Transaction from "./pages/Transaction";
 import AdminRegister from "./pages/admin/AdminRegister";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import SalesHistory from "./pages/admin/SalesHistory";
+import Stocking from "./pages/admin/Stocking";
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ const App: React.FC = () => {
       <Route path="/Admin/Register" element={<AdminRegister />}></Route>
       <Route path="/Admin/Dashboard" element={<AdminDashboard />}></Route>
       <Route path="/Admin/SalesHistory" element={<SalesHistory />}></Route>
+      <Route path="/Admin/Stocking" element={<Stocking />}></Route>
     </Routes>
   );
 };
