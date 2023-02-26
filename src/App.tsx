@@ -9,6 +9,7 @@ import Product from "./pages/Product";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Transaction from "./pages/Transaction";
+import AdminRegister from "./pages/admin/AdminRegister";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <Route path="/Dashboard" element={<Dashboard />}></Route>
       <Route path="/Transaction" element={<Transaction />}></Route>
       <Route path="/Profile" element={<Profile />}></Route>
+      <Route path="/Admin/Register" element={<AdminRegister />}></Route>
     </Routes>
   );
 };

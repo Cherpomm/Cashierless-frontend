@@ -107,7 +107,7 @@ const Profile: React.FC = () => {
             </Col>
             <Col lg={4} className="p-0">
               <Image
-                className="w-100 h-100 rounded-5"
+                className="w-100 h-100 rounded-end"
                 src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
               ></Image>
             </Col>
