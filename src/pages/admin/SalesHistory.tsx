@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { Button, Container, Pagination, Row, Table } from "react-bootstrap";
 import { BsFillTrashFill } from "react-icons/bs";
-import * as Navbar from "../components/Navbar";
+import * as Navbar from "../../components/Navbar";
 
 interface TransactionProps {
   id: number;
-  store: string;
+  clientName: string;
   timestamp: Date;
   product: string;
   price: number;
   status: "Success" | "Failure" | "Pending";
 }
 
-const Transaction: React.FC = () => {
+const SalesHistory: React.FC = () => {
   const mockTransactions: TransactionProps[] = [
     {
       id: 1,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -24,7 +24,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 2,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -32,7 +32,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 3,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -40,7 +40,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 4,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -48,7 +48,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 5,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -56,7 +56,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 6,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -64,7 +64,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 7,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -72,7 +72,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 8,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -80,7 +80,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 9,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -88,7 +88,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 10,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -96,7 +96,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 11,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -104,7 +104,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 12,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -112,7 +112,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 13,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -120,7 +120,7 @@ const Transaction: React.FC = () => {
     },
     {
       id: 14,
-      store: "Hardware Store",
+      clientName: "Cherpomm",
       timestamp: new Date(),
       product: "Lay Origianl x 1",
       price: 20,
@@ -185,7 +185,7 @@ const Transaction: React.FC = () => {
           <thead>
             <tr className="text-center">
               <th>ID</th>
-              <th>Store</th>
+              <th>Client Name</th>
               <th>Timestamp</th>
               <th>Product</th>
               <th>Price</th>
@@ -197,7 +197,7 @@ const Transaction: React.FC = () => {
             {currentTransactions.map((transaction) => (
               <tr key={transaction.id} className="text-center">
                 <td>{transaction.id}</td>
-                <td>{transaction.store}</td>
+                <td>{transaction.clientName}</td>
                 <td>{transaction.timestamp.toLocaleString()}</td>
                 <td>{transaction.product}</td>
                 <td>{transaction.price + " B"}</td>
@@ -216,4 +216,4 @@ const Transaction: React.FC = () => {
   );
 };
 
-export default Transaction;
+export default SalesHistory;

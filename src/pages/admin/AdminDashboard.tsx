@@ -74,9 +74,11 @@ const Dashboard: React.FC = () => {
               <h1 className="fw-bold">Good to see you!</h1>
               <p className="mb-0">Click the button to check all</p>
               <p className="mt-0">your sales history</p>
-              <Button variant="primary" className="text-white w-25">
-                Sales History
-              </Button>
+              <Link to={"/Admin/SalesHistory"}>
+                <Button variant="primary" className="text-white w-25">
+                  Sales History
+                </Button>
+              </Link>
             </div>
             <Card>
               <Card.Body>
