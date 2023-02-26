@@ -11,6 +11,7 @@ import * as Navbar from "../../components/Navbar";
 import ShoppingMan from "../../assets/shopping_man.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./AdminRegister.scss";
+import { Link } from "react-router-dom";
 
 const AdminRegister: React.FC = () => {
   return (
@@ -63,11 +64,13 @@ const AdminRegister: React.FC = () => {
                   <Form.Group className="mb-3" controlId="formPolicy">
                     <Form.Check type="checkbox" label="Policy" />
                   </Form.Group>
-                  <Button
-                    variant="primary"
-                    type="submit"
-                    className="text-white w-100"
-                  >
+                  <Button variant="primary" type="submit" className="w-100">
+                    <Link
+                      to={"/Admin/Dashboard"}
+                      className="text-white ms-2 text-decoration-none"
+                    >
+                      Register
+                    </Link>
                     Register
                   </Button>
                 </Form>
