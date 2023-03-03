@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Card, Container } from "react-bootstrap";
 import * as Navbar from "../../components/Navbar";
+import StockCard from "../../components/StockCard";
 
 interface stock {
   id: number;
@@ -57,6 +58,11 @@ const mockStock: stock[] = [
 const Stocking: React.FC = () => {
   const [stocking, setStocking] = useState(mockStock);
   const handleSave = () => {};
+
+  useEffect(() => {
+    console.log(stocking)
+  }, [stocking])
+
   return (
     <div>
       <Navbar.DashbaordNavbar />
@@ -65,19 +71,11 @@ const Stocking: React.FC = () => {
           <h2 className="fw-bold">Stocking</h2>
         </div>
         <div className="d-flex flex-row">
-          {mockStock.map((item) => (
-            <Card style={{ width: "18rem", height: "22rem" }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
-              <Card.Body>
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
-                <div className="d-flex flex-row align-items-center">
-                  <Button variant="primary">+</Button>
-                  <p className="border">{item.count}</p>
-                  <Button variant="primary">-</Button>
-                </div>
-              </Card.Body>
-            </Card>
+          {stocking.map((item) => (
+            <StockCard 
+              item={item}
+              handleChange={handleSave}
+             />
           ))}
         </div>
       </Container>
