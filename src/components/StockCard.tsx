@@ -12,19 +12,23 @@ interface stock {
 
 interface StockCardProps {
   item: stock;
-  handleChange: (data:string) => void;
+  handleChange: (data:stock) => void;
 }
 
 const StockCard: React.FC<StockCardProps> = (props) => {
   const [count, setCount] = useState(props.item.count);
 
   const handlePlus = () => {
+    props.item.count++;
+    setCount(props.item.count)
     console.log("Plus" + props.item.count)
-    setCount(props.item.count++)
+    props.handleChange(props.item)
   }
   const handleMinus = () => {
-    console.log("Minus")
-    props.item.count !== 0 && setCount(props.item.count--)
+    props.item.count !== 0 && props.item.count--;
+    setCount(props.item.count)
+    console.log("Minus" + props.item.count)
+    props.handleChange(props.item)
   }
   
   return (

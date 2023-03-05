@@ -57,7 +57,10 @@ const mockStock: stock[] = [
 
 const Stocking: React.FC = () => {
   const [stocking, setStocking] = useState(mockStock);
-  const handleSave = () => {};
+  const handleSave = (data: stock) => {
+    setStocking(mockStock);
+    console.log(mockStock);
+  };
 
   useEffect(() => {
     console.log(stocking)
