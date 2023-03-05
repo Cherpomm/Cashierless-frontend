@@ -95,13 +95,15 @@ const Dashboard: React.FC = () => {
                     xs={4}
                     className="d-flex flex-column justify-content-center"
                   >
-                    <Button
-                      variant="primary"
-                      className="text-white w-100 card-button"
-                    >
-                      <BsFillCreditCardFill className="me-1" />
-                      <span>Adjust Product</span>
-                    </Button>
+                    <Link to={"/Admin/Stocking"}>
+                      <Button
+                        variant="primary"
+                        className="text-white w-100 card-button"
+                      >
+                        <BsFillCreditCardFill className="me-1" />
+                        <span>Adjust Product</span>
+                      </Button>
+                    </Link>
                     <Link to={"/Transaction"}>
                       <Button
                         variant="primary"

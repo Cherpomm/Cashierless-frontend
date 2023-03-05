@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { Button, Card, Container } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import * as Navbar from "../../components/Navbar";
 import StockCard from "../../components/StockCard";
+import "./Stocking.scss";
 
 interface stock {
   id: number;
@@ -19,7 +20,7 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "Hello",
+    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 2,
@@ -27,7 +28,7 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "Hello",
+    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "Hello",
+    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "Hello",
+    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 5,
@@ -51,7 +52,7 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "Hello",
+    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
 ];
 
@@ -59,7 +60,6 @@ const Stocking: React.FC = () => {
   const [stocking, setStocking] = useState(mockStock);
   const handleSave = (data: stock) => {
     setStocking(mockStock);
-    console.log(mockStock);
   };
 
   useEffect(() => {
@@ -74,13 +74,43 @@ const Stocking: React.FC = () => {
           <h2 className="fw-bold">Stocking</h2>
         </div>
         <div className="d-flex flex-row">
+          <Col lg={9}>
+            <Row>
+              {stocking.map((item) => (
+                <StockCard 
+                  item={item}
+                  handleChange={handleSave}
+                />
+              ))}
+            </Row>
+          </Col>
+          <Col lg={3}>
+            <div className="d-fix">
+              <h4 className="fw-bold">Summary</h4>
+              <div style={{borderBottom: "solid"}} />
+              {mockStock.map((item) => (
+                <div className="d-flex flex-row justify-content-between my-2">
+                  <span>{item.name}</span>
+                  <span>x{item.count} {item.count*item.price}B</span>
+                </div>
+              ))}
+              <div className="d-flex flex-row justify-content-between mt-3">
+                <span>Total</span>
+                <span>x{mockStock.reduce((a,b) => a + b.count, 0 )}</span>
+              </div>
+              <div style={{borderBottom: "solid"}} />
+            </div>
+          </Col>
+        </div>
+        
+        {/* <div className="d-flex flex-row">
           {stocking.map((item) => (
             <StockCard 
               item={item}
               handleChange={handleSave}
              />
           ))}
-        </div>
+        </div> */}
       </Container>
     </div>
   );

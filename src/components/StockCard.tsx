@@ -32,15 +32,15 @@ const StockCard: React.FC<StockCardProps> = (props) => {
   }
   
   return (
-    <Card style={{ width: "18rem", height: "22rem" }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+    <Card style={{ width: "250px", margin: "10px", paddingTop: "5px", paddingBottom: "5px" }}>
+      <Card.Img variant="top" src={props.item.picture} style={{width: "250px", height: "200px", objectFit: "contain"}}/>
       <Card.Body>
         <Card.Title>{props.item.name}</Card.Title>
         <Card.Text>{props.item.description}</Card.Text>
-        <div className="d-flex flex-row align-items-center">
-          <Button variant="primary" onClick={handlePlus}>+</Button>
-          <p className="border">{props.item.count}</p>
-          <Button variant="primary" onClick={handleMinus}>-</Button>
+        <div className="d-flex align-items-center">
+          <Button variant="primary text-white rounded-circle" onClick={handlePlus}>+</Button>
+          <p className="m-1">{props.item.count}</p>
+          <Button variant="primary text-white rounded-circle" onClick={handleMinus}>-</Button>
         </div>
       </Card.Body>
     </Card>
