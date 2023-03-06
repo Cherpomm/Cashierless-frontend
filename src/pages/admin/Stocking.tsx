@@ -115,15 +115,6 @@ const Stocking: React.FC = () => {
             </Col>
           </Row>
         </div>
-
-        {/* <div className="d-flex flex-row">
-          {stocking.map((item) => (
-            <StockCard 
-              item={item}
-              handleChange={handleSave}
-             />
-          ))}
-        </div> */}
       </Container>
     </div>
   );
