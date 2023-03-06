@@ -20,7 +20,8 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
+    picture:
+      "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 2,
@@ -28,7 +29,8 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
+    picture:
+      "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
+    picture:
+      "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 4,
@@ -44,7 +47,8 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
+    picture:
+      "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
   {
     id: 5,
@@ -52,7 +56,8 @@ const mockStock: stock[] = [
     price: 20,
     description: "Helloworld",
     count: 10,
-    picture: "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
+    picture:
+      "https://backend.tops.co.th/media/catalog/product/8/8/8850718809028_05-04-2021.jpg",
   },
 ];
 
@@ -63,8 +68,8 @@ const Stocking: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log(stocking)
-  }, [stocking])
+    console.log(stocking);
+  }, [stocking]);
 
   return (
     <div>
@@ -74,35 +79,43 @@ const Stocking: React.FC = () => {
           <h2 className="fw-bold">Stocking</h2>
         </div>
         <div className="d-flex flex-row">
-          <Col lg={9}>
-            <Row>
-              {stocking.map((item) => (
-                <StockCard 
-                  item={item}
-                  handleChange={handleSave}
-                />
-              ))}
-            </Row>
-          </Col>
-          <Col lg={3}>
-            <div className="d-fix">
-              <h4 className="fw-bold">Summary</h4>
-              <div style={{borderBottom: "solid"}} />
-              {mockStock.map((item) => (
-                <div className="d-flex flex-row justify-content-between my-2">
-                  <span>{item.name}</span>
-                  <span>x{item.count} {item.count*item.price}B</span>
+          <Row>
+            <Col md={9}>
+              <Row>
+                {stocking.map((item) => (
+                  <StockCard
+                    key={item.id}
+                    item={item}
+                    handleChange={handleSave}
+                  />
+                ))}
+              </Row>
+            </Col>
+            <Col md={3}>
+              <div className="d-fix">
+                <h4 className="fw-bold">Summary</h4>
+                <div style={{ borderBottom: "solid" }} />
+                {mockStock.map((item) => (
+                  <div
+                    className="d-flex flex-row justify-content-between my-2"
+                    key={item.id}
+                  >
+                    <span>{item.name}</span>
+                    <span>
+                      x{item.count} {item.count * item.price}B
+                    </span>
+                  </div>
+                ))}
+                <div className="d-flex flex-row justify-content-between mt-3">
+                  <span>Total</span>
+                  <span>x{mockStock.reduce((a, b) => a + b.count, 0)}</span>
                 </div>
-              ))}
-              <div className="d-flex flex-row justify-content-between mt-3">
-                <span>Total</span>
-                <span>x{mockStock.reduce((a,b) => a + b.count, 0 )}</span>
+                <div style={{ borderBottom: "solid" }} />
               </div>
-              <div style={{borderBottom: "solid"}} />
-            </div>
-          </Col>
+            </Col>
+          </Row>
         </div>
-        
+
         {/* <div className="d-flex flex-row">
           {stocking.map((item) => (
             <StockCard 
