@@ -89,6 +89,21 @@ const Stocking: React.FC = () => {
                     handleChange={handleSave}
                   />
                 ))}
+                <Card
+                  style={{
+                    width: "200px",
+                    margin: "10px",
+                    paddingTop: "5px",
+                    paddingBottom: "5px",
+                  }}
+                >
+                  <Card.Body className="d-flex flex-column justify-content-center align-items-center">
+                    <Button className="rounded-circle text-white mb-2">
+                      +
+                    </Button>
+                    <span className="text-center">Add your product here</span>
+                  </Card.Body>
+                </Card>
               </Row>
             </Col>
             <Col md={3}>
@@ -106,11 +121,15 @@ const Stocking: React.FC = () => {
                     </span>
                   </div>
                 ))}
-                <div className="d-flex flex-row justify-content-between mt-3">
+                <div className="d-flex flex-row justify-content-between mt-3 mb-2">
                   <span>Total</span>
                   <span>x{mockStock.reduce((a, b) => a + b.count, 0)}</span>
                 </div>
                 <div style={{ borderBottom: "solid" }} />
+                <div className="d-flex justify-content-end mt-2">
+                  <Button className="me-2 text-white">Save</Button>
+                  <Button className="text-white">Cancel</Button>
+                </div>
               </div>
             </Col>
           </Row>

@@ -49,7 +49,7 @@ const StockCard: React.FC<StockCardProps> = (props) => {
         <Card.Title>{props.item.name}</Card.Title>
         <Card.Text>{props.item.description}</Card.Text>
         <div className="d-flex justify-content-between align-items-center">
-          <div className="d-flex">
+          <div className="d-flex align-items-center">
             <Button
               variant="primary text-white rounded-circle"
               onClick={handlePlus}
