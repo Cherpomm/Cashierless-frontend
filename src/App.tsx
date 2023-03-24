@@ -13,6 +13,8 @@ import AdminRegister from "./pages/admin/AdminRegister";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import SalesHistory from "./pages/admin/SalesHistory";
 import Stocking from "./pages/admin/Stocking";
+import Store from "./pages/store/Store";
+import CheckOut from "./pages/store/CheckOut";
 
 const App: React.FC = () => {
   return (
@@ -30,6 +32,8 @@ const App: React.FC = () => {
       <Route path="/Admin/Dashboard" element={<AdminDashboard />}></Route>
       <Route path="/Admin/SalesHistory" element={<SalesHistory />}></Route>
       <Route path="/Admin/Stocking" element={<Stocking />}></Route>
+      <Route path="/Store" element={<Store />}></Route>
+      <Route path="/Store/CheckOut" element={<CheckOut />}></Route>
     </Routes>
   );
 };
