@@ -40,9 +40,7 @@ const CheckOut: React.FC = () => {
                     className="d-flex flex-row justify-content-between my-2"
                     key={item.id}
                   >
-                    <span>
-                      {item.name == "string" ? "Oishi honey lemon" : "other"}
-                    </span>
+                    <span>{item.name}</span>
                     <span>
                       x{1} {item.price}B
                     </span>
