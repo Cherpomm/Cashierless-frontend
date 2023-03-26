@@ -15,6 +15,7 @@ import SalesHistory from "./pages/admin/SalesHistory";
 import Stocking from "./pages/admin/Stocking";
 import Store from "./pages/store/Store";
 import CheckOut from "./pages/store/CheckOut";
+import Payment from "./pages/store/Payment";
 
 const App: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const App: React.FC = () => {
       <Route path="/Admin/Stocking" element={<Stocking />}></Route>
       <Route path="/Store" element={<Store />}></Route>
       <Route path="/Store/CheckOut" element={<CheckOut />}></Route>
+      <Route path="/Store/Payment" element={<Payment />}></Route>
     </Routes>
   );
 };

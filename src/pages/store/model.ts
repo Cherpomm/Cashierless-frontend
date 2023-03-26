@@ -12,3 +12,8 @@ export interface CheckOutProps {
   totalPrice: number;
   totalItems: number;
 }
+
+export interface Pay {
+  item_id: number;
+  quantity: number;
+}

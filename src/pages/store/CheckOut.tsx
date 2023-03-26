@@ -1,25 +1,34 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Row, Image } from "react-bootstrap";
-import { Link, useLocation } from "react-router-dom";
-
-interface Item {
-  id: number;
-  name: string;
-  price: number;
-  quatity: number;
-  shop_id: number;
-}
-
-interface CheckOutProps {
-  base64: string;
-  items: Item[];
-  totalPrice: number;
-  totalItems: number;
-}
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { CheckOutProps, Pay } from "./model";
 
 const CheckOut: React.FC = () => {
   const location = useLocation();
+  let navigate = useNavigate();
   const [data, setData] = useState<CheckOutProps>();
+  const [temp, setTemp] = useState<Pay[]>([]);
+
+  const itemToPay = () => {
+    data?.items.forEach((item) => {});
+  };
+
+  const handlePayment = () => {
+    let payment: Pay[] = [];
+    data?.items.forEach((item) => {
+      payment.push({ item_id: item.id, quantity: 1 });
+    });
+    console.log(payment);
+    navigate("/Store/Payment", {
+      state: {
+        client_id: 6,
+        shop_id: 3,
+        items: payment,
+        barcodes: [],
+      },
+    });
+  };
+
   useEffect(() => {
     setData(location.state);
   }, []);
@@ -56,7 +65,9 @@ const CheckOut: React.FC = () => {
                 </div>
                 <div style={{ borderBottom: "solid" }} />
                 <div className="d-flex justify-content-center mt-2">
-                  <Button className="me-2 text-white">Pay</Button>
+                  <Button className="me-2 text-white" onClick={handlePayment}>
+                    Pay
+                  </Button>
                   <Link to={"/Store"}>
                     <Button className="text-white">Retry</Button>
                   </Link>
