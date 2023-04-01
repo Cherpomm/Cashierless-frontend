@@ -12,6 +12,38 @@ import ShoppingWomen from "../assets/shopping_women.png";
 import { BsFillBasket2Fill } from "react-icons/bs";
 import "./Login.scss";
 import { Link } from "react-router-dom";
+import React from "react";
+
+const HTMLForm: React.FC = () => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  return (
+    <form>
+      <div className="formRow">
+        <label htmlFor="email">Email address</label>
+        <input
+          type="email"
+          name="email"
+          className="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <div className="formRow">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          className="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
 
 const Login: React.FC = () => {
   return (
